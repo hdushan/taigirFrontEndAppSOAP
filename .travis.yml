@@ -8,6 +8,8 @@ deploy:
   app: taigirquotefrontendappsoap
   on:
     repo: hdushan/taigirquotefrontendappsoap
+  api_key:
+    secure: FpqZo2AFWn+IkZ5RtpO0pmX2ah4VoS408mTzcWvg2rxQkZnk5W+KE3d1nyG/ZbPuyvRz12rvtTSLwIR3juNxi3mnvUBW9nnELAHBqQT09yu/TTNH+QowiZmD4HZTmPbOg1vlmxPIK+5JAVZVibApuEmSMkDeBDxBsgc+7SnYYg9d1Eurq7hlhH7XOmuyOo5l4dRcIbUExyFWsuxTp9Ksivam6j4OMNFnNwgkMY0h1lb8LbNEJZihxzO2IhVtWHXBZffGqXIF1QekdpV6wujsCSoBXlB+rwI2vhplSezAMslV9i2Z6cDVoHGz3Ti1PBXPvQf+UWbo6+cSIamSgTICPFMA8ir/QMr9gaFT7ZimvHSt/i938dOIBZKKNbBYo+seVJvMmCbnY2Rd6zCoY/zjCkEo7irrEe2kRLyf1PYXOZ+o8oTOm/WWam8ZdlaZz6WF4ks+SIRtZ+P2L7QhOWiVgf8U0nEKDT6RRzzZY8QEj0aFjubdz/x695KfDVNPGrJXv4V/6FS/haVk7Z1I4QG+9w2mALAAJZXcE7TwbXEDDA0EFsaNGcuvY887txOPcGv1wgqznH/2FG2XBdEDVtqs3sRhgQ1WtlgrPMCsg3i27mX1gqoZPMPnYMWtYHdHCVFY6cbNIZZ/M57SeCEYIiYDmbfH+avlWy1LeYUIrUbld8s=
 notifications:
   email:
     recipients:

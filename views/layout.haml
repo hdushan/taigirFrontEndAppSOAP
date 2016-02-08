@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %title TAIGIR QuickQuote
+    %link(rel="stylesheet" href="css/jquery-ui.css" media="screen, projection")
+    %link(rel="stylesheet" href="css/bootstrap.min.css")
+    %link(rel="stylesheet" href="css/bootstrapValidator.min.css")
+    %script(src="js/jquery-1.8.2.min.js")
+    %script(src="js/jquery-ui.js")
+    %script(src="/javascripts/application.js")
+    %script(src="js/bootstrapValidator.min.js")
+    %script(src="js/bootstrap.min.js")
+  %body
+    .container-fluid
+      .row
+        #wrapper
+          #header
+          .container-fluid
+            .row
+              %img{:src => "images/sydneytesters.png", :style => "margin-top:30px;", :class => "mainbox col-xs-8 col-sm-8 col-md-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2"}
+      .row 
+        .container-fluid
+          .row
+            =yield

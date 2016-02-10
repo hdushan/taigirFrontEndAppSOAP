@@ -7,7 +7,7 @@ class CarPremiumCalculatorClient
     
     @wsdl_url = wsdl_url_base
     @calculator = Savon.client do
-      endpoint "#{@wsdl_url}/calculator_service"
+      endpoint "#{wsdl_url_base}/calculator_service"
       namespace "http://www.hans.com/calculator"
       log true
     end
@@ -15,8 +15,9 @@ class CarPremiumCalculatorClient
     @premium = nil
   end
 
-  def getPremiumForQuote(quote)
+  def getPremiumForQuoteSOAP(quote)
     if @premium == nil
+      puts @calculator.inspect
       response = @calculator.call(:car_premium_request) do
         xml "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cal=\"http://www.hans.com/calculator\">
    <soapenv:Header/>

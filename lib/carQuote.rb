@@ -7,7 +7,7 @@ class CarQuote < Quote
   
   @@makes = {"audi" => "Audi", "alfa" => "Alfa Romeo", "bmw" => "BMW", "lexus" => "Lexus", "toyota" => "Toyota", "vw" => "Volkswagen"}
     
-  def initialize(age, email, state, make, gender, year)
+  def initialize(age, email, state, make, gender, year, soapxml=false)
     @age = age.to_i
     @email = email
     @state = state
@@ -15,7 +15,11 @@ class CarQuote < Quote
     @gender = gender
     @year = year
     super(:car, @age, @email, @state, @gender)
-    @premium = CarPremiumCalculatorClient.new($calculator_service_url).getPremiumForQuoteJSON(self)
+    if soapxml==true
+      @premium = CarPremiumCalculatorClient.new($calculator_service_url).getPremiumForQuoteSOAP(self)
+    else
+      @premium = CarPremiumCalculatorClient.new($calculator_service_url).getPremiumForQuoteJSON(self)
+    end
   end
   
   def namedMake

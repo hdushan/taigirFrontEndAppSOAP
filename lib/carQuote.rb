@@ -15,7 +15,7 @@ class CarQuote < Quote
     @gender = gender
     @year = year
     super(:car, @age, @email, @state, @gender)
-    @premium = CarPremiumCalculatorClient.new($calculator_service_url).getPremiumForQuote(self)
+    @premium = CarPremiumCalculatorClient.new($calculator_service_url).getPremiumForQuoteJSON(self)
   end
   
   def namedMake

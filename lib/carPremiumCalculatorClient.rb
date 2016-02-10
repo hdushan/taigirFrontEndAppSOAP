@@ -1,9 +1,13 @@
+require 'net/http'
+require 'json'
+
 class CarPremiumCalculatorClient
 
   def initialize(wsdl_url_base)
     
+    @wsdl_url = wsdl_url_base
     @calculator = Savon.client do
-      endpoint "#{wsdl_url_base}/calculator_service"
+      endpoint "#{@wsdl_url}/calculator_service"
       namespace "http://www.hans.com/calculator"
       log true
     end
@@ -30,6 +34,12 @@ class CarPremiumCalculatorClient
       @premium = ('%.2f'%(response.body[:car_premium_response][:car_premium]))
     end
     @premium
+  end
+  
+  def getPremiumForQuoteJSON(quote)
+    response = JSON.parse Net::HTTP.get URI.parse "#{@wsdl_url}/car_premium?age=#{quote.age}&gender=#{quote.gender}&make=#{quote.make}&state=#{quote.state}"
+    puts response
+    ('%.2f'%(response['price']))
   end
   
 end

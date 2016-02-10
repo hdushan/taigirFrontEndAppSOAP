@@ -14,7 +14,7 @@ class LifeQuote < Quote
     @occupationCategory = occupationCategory
     @gender = gender
     super(:life, @age, @email, @state, @gender)
-    @premium = LifePremiumCalculatorClient.new($calculator_service_url).getPremiumForQuote(self)
+    @premium = LifePremiumCalculatorClient.new($calculator_service_url).getPremiumForQuoteJSON(self)
   end
   
   def namedOccupationCategory

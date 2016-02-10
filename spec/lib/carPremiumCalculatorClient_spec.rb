@@ -12,19 +12,30 @@ describe CarPremiumCalculatorClient, :pact => true do
   describe "car_premium" do
 
     before do
+      # calculator_service.given("CarPremiumRequest").
+#         upon_receiving("a request for a car premium").
+#         with(method: :post, path: '/calculator_service', body: /LifePremiumRequest/).
+#         will_respond_with(
+#           status: 200,
+#           headers: {'Content-Type' => 'text/xml;charset=utf-8'},
+#           body: "<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:calculator=\"http://www.hans.com/calculator\">
+#    <SOAP:Body>
+#       <calculator:CarPremiumResponse>
+#          <calculator:CarPremium>55.54</calculator:CarPremium>
+#       </calculator:CarPremiumResponse>
+#    </SOAP:Body>
+# </SOAP:Envelope>" )
+
       calculator_service.given("CarPremiumRequest").
-        upon_receiving("a request for a car premium").
-        with(method: :post, path: '/calculator_service', body: /CarPremiumRequest/).
-        will_respond_with(
-          status: 200,
-          headers: {'Content-Type' => 'text/xml'},
-          body: "<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:calculator=\"http://www.hans.com/calculator\">
-   <SOAP:Body>
-      <calculator:CarPremiumResponse>
-         <calculator:CarPremium>55.54</calculator:CarPremium>
-      </calculator:CarPremiumResponse>
-   </SOAP:Body>
-</SOAP:Envelope>" )
+        upon_receiving("a JSON request for a car premium").
+        with(method: :get, path: '/car_premium', query: 'age=23&gender=male&make=bmw&state=nsw')
+			  .will_respond_with(
+				status: 200,
+				headers: {"Content-Type" => "application/json"},
+				body: {
+					price: 55.54
+				}
+			)
 
     end
 

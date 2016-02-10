@@ -90,6 +90,7 @@ GEM
       rspec (>= 2.14)
       term-ansicolor (~> 1.0)
       thor
+    pact-xml (0.0.1.alpha)
     rack (1.6.4)
     rack-flash3 (1.0.5)
       rack
@@ -160,6 +161,7 @@ DEPENDENCIES
   json
   nokogiri
   pact
+  pact-xml
   rack-flash3
   rack-test
   rake

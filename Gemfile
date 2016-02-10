@@ -19,3 +19,4 @@ gem "selenium-webdriver"
 gem "chromedriver-helper"
 gem "savon"
 gem "pact"
+gem 'pact-xml'

@@ -6,7 +6,6 @@ require 'rubygems'
 require 'sinatra'
 require 'rack/test'
 require 'rspec'
-require 'pact'
  
 # set test environment
 set :environment, :test

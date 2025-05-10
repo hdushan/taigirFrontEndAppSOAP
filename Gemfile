@@ -2,7 +2,7 @@
 source 'http://rubygems.org'
  
 gem 'tilt', '~> 1.4.1'
-gem "sinatra"
+gem "sinatra", ">= 4.0.0"
 gem "rack-flash3"
 gem "haml"
 gem "json"
@@ -18,5 +18,5 @@ gem "zip"
 gem "selenium-webdriver"
 gem "chromedriver-helper"
 gem "savon"
-gem "pact"
+gem "pact", ">= 1.44.0"
 gem 'pact-xml'

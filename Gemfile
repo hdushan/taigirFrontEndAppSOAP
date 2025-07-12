@@ -18,5 +18,5 @@ gem "zip"
 gem "selenium-webdriver"
 gem "chromedriver-helper"
 gem "savon"
-gem "pact"
+gem "pact", ">= 1.9.1"
 gem 'pact-xml'
